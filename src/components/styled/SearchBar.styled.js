@@ -8,10 +8,11 @@ export const SearchBarWrap = styled.div`
 export const SearchForm = styled.form`
     display: flex;
     align-items: center;
-    border: 2px solid #fff;
+    border: 2px solid ${props => props.theme.colors.text};
     border-radius: 4rem;
     padding: 0.2rem 0.3rem;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(2px);
+    background: ${props => props.theme.colors.background};
 `;
 
 export const SearchInput = styled.input`
@@ -22,10 +23,10 @@ export const SearchInput = styled.input`
     outline: none;
     ::placeholder,
     ::-webkit-input-placeholder {
-        color: #fff;
+        color: ${props => props.theme.colors.text};
     }
     :-ms-input-placeholder {
-        color: #fff;
+        color: ${props => props.theme.colors.text};
     }
 `;
 
@@ -33,7 +34,7 @@ export const SearchButton = styled.button`
     width:2.4rem;
     height: 2.4rem;
     background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid ${props => props.theme.colors.text};
     border-radius: 50%;
 `;
 
