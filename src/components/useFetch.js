@@ -7,6 +7,7 @@ const useFetch = () => {
   const getWeatherData = async (location) => {
     setIsPending(true);
     setError("");
+    setWeather({});
     try {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=3c56e3850047c07fd72b2e8910868401`
@@ -20,7 +21,7 @@ const useFetch = () => {
       setWeather(data);
     } catch (error) {
       setIsPending(false);
-      setError("Network Error");
+      setError("Location could not be found");
       console.log("Network Error:", error);
     }
   }

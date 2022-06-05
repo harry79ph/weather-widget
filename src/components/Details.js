@@ -10,14 +10,12 @@ const Details = ({ weatherData: { data, isPending, error } }) => {
             {title:'Max Temp', value: `${(data.main.temp_max - 273.15).toFixed()}°C`},
             {title:'Humidity', value: `${data.main.humidity}%`},
             {title:'Wind Speed', value: `${(data.wind.speed * 3.6).toFixed()}km/h`},
-            {title:'Wind Direction', value: `${data.wind.deg.toFixed()}°`},
+            {title:'Wind Direction', value: `${data.wind.deg.toFixed()}°`}
         ];
     }
     return (
         <DetailsSection>
             <DetailstWrap>
-                {isPending && <div>Loading...</div>}
-                {error && <div>{ error }</div>}
                 {data.main && (<Grid>
                     {gridData.map(item => {
                         return (<Card key={item.title}>

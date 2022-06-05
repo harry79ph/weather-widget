@@ -16,6 +16,7 @@ export const WeatherIcon = styled.div`
     align-self: center;
     margin-right: -0.7rem;
     margin-bottom: -0.3rem;
+    filter: brightness(2);
 `;
 
 export const MainTemp = styled.p`

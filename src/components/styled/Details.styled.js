@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DetailsSection = styled.section`
+export const DetailsSection = styled.div`
     padding-bottom: 3rem;
     @media ${({theme}) => theme.mobile} {
         padding-bottom: 2rem;

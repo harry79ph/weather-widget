@@ -8,7 +8,9 @@ const SearchBar = ({ getData }) => {
     
     const handleClick = (e) => {
         e.preventDefault();
-        getData(location);
+        if (location) {
+            getData(location);
+        }
         setLocation('');
     }
 
@@ -16,7 +18,7 @@ const SearchBar = ({ getData }) => {
         <SearchBarWrap>
             <SearchForm>
                 <SearchInput type="text" placeholder="Enter Location" value={location} onChange={(e) => setLocation(e.target.value)}/>
-                <SearchButton type="submit" onClick={handleClick}><SearchImg src={SearchIcon}></SearchImg></SearchButton>
+                <SearchButton type="submit" onClick={handleClick}><SearchImg src={SearchIcon} alt="search"></SearchImg></SearchButton>
             </SearchForm>
         </SearchBarWrap>
     );

@@ -5,11 +5,12 @@ const Header = () => {
     const [greeting, setGreeting] = useState("");
     const greetMsg = () => {
         const hour = new Date().getHours();
-        const texts = ["Good morning", "Good afternoon", "Good evening"];
+        const texts = ["Good night", "Good morning", "Good afternoon", "Good evening"];
         let text = "";
-        if (hour < 12) text = texts[0];
-        else if (hour < 18) text = texts[1];
-        else text = texts[2];
+        if (hour < 6) text = texts[0];
+        else if (hour < 12) text = texts[1];
+        else if (hour < 18) text = texts[2];
+        else text = texts[3];
         return text;
     }
     useEffect(() => {

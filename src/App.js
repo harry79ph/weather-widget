@@ -7,7 +7,7 @@ import SearchBar from "./components/SearchBar";
 import Details from "./components/Details";
 import useFetch from "./components/useFetch";
 
-const theme = {
+export const theme = {
   colors: {
     text: '#fff',
     background: 'rgba(255, 255, 255, 0.05)',
