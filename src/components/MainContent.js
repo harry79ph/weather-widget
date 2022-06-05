@@ -1,14 +1,21 @@
-import { City, Desc, Location, MainContentWrap, MainTemp } from "./styled/MainContent.styled";
+import { City, Location, MainContentWrap, MainTemp, WeatherIcon } from "./styled/MainContent.styled";
 
-const MainContent = () => {
+const MainContent = ({ weatherData: { data, isPending, error } }) => {
+    
     return (
         <MainContentWrap>
-            <MainTemp>16°C</MainTemp>
-            <Location>
-                <City>London</City>
-                <p>13:00 Friday</p>
-            </Location>
-            <Desc>Clouds</Desc>
+            {isPending && <div>Loading...</div>}
+            {error && <div>{error}</div>}
+            {data.main && (<>
+                <WeatherIcon>
+                    <img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt={data.weather[0].main} />
+                </WeatherIcon>
+                <MainTemp>{(data.main.temp - 273.15).toFixed()}°C</MainTemp>
+                <Location>
+                    <City>{data.name}</City>
+                    <p>{data.weather[0].main}</p>
+                </Location>
+            </>)}
         </MainContentWrap>
     );
 };

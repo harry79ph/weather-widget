@@ -5,7 +5,7 @@ import MainContent from "./components/MainContent";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import Details from "./components/Details";
-import { useState } from "react";
+import useFetch from "./components/useFetch";
 
 const theme = {
   colors: {
@@ -17,23 +17,8 @@ const theme = {
 
 function App() {
 
-  const [weather, setWeather] = useState({});
-
-
-  const getWeatherData = async (location) => {
-    try {
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=3c56e3850047c07fd72b2e8910868401`);
-      if (!response.ok) {
-        throw new Error('Network response was not OK');
-      }
-      const data = await response.json();
-      console.log(data);
-      setWeather(data);
-    } catch (error) {
-      console.log('Network Error:', error);
-    }
-  };
-  console.log(weather);
+  const { weather, isPending, error, getWeatherData } = useFetch();
+  const weatherData = {data: weather, isPending, error};
 
   return (
     <ThemeProvider theme={theme}>
@@ -41,8 +26,8 @@ function App() {
       <Container>
         <Header />
         <SearchBar getData={getWeatherData} />
-        <MainContent />
-        <Details />
+        <MainContent weatherData={weatherData} />
+        <Details weatherData={weatherData} />
       </Container>
     </ThemeProvider>
   );
