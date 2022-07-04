@@ -11,7 +11,7 @@ export const DetailstWrap = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 42rem;
+    width: 37.5rem;
     backdrop-filter: blur(3px);
     border-radius: 10px;
     background: ${props => props.theme.colors.background};
@@ -33,15 +33,16 @@ export const Grid = styled.div`
 export const Card = styled.div`
     display: flex;
     align-items: center;
-    width: 14rem;
+    width: 12.5rem;
     padding: 0.5rem 1rem;
     &:nth-child(-n+3) {
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
     @media ${({theme}) => theme.mobile} {
         width: 7rem;
+        min-height: 3rem;
         padding: 0.2rem;
-        & P {
+        & p {
             font-size: 1rem;
         }
     }

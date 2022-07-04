@@ -1,13 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import InkFree from "../assets/fonts/InkFree.woff";
-import InkFree2 from "../assets/fonts/InkFree.woff2";
 
 const GlobalStyle = createGlobalStyle`
-    @font-face {
-        font-family: "Ink Free";
-        src: url(${InkFree2}) format('woff2'),
-        url(${InkFree}) format('woff');
-    }
     *,
     *::before,
     *::after {
@@ -16,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        font-family: "Ink Free", sans-serif;
+        font-family: 'Handlee', cursive;
         color: #fff;
     }
     html, body {

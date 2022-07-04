@@ -1,8 +1,9 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { HeaderWrap } from "./styled/Header.styled";
 
 const Header = () => {
-    const [greeting, setGreeting] = useState("");
+    const [greeting, setGreeting] = useState<string>("");
     const greetMsg = () => {
         const hour = new Date().getHours();
         const texts = ["Good night", "Good morning", "Good afternoon", "Good evening"];

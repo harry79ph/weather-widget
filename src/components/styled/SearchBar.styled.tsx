@@ -8,11 +8,9 @@ export const SearchBarWrap = styled.div`
 export const SearchForm = styled.form`
     display: flex;
     align-items: center;
-    border: 2px solid ${props => props.theme.colors.text};
+    border: 2px solid ${props => props.theme.colors.border};
     border-radius: 4rem;
     padding: 0.2rem 0.3rem;
-    backdrop-filter: blur(2px);
-    background: ${props => props.theme.colors.background};
 `;
 
 export const SearchInput = styled.input`
@@ -33,9 +31,13 @@ export const SearchInput = styled.input`
 export const SearchButton = styled.button`
     width:2.4rem;
     height: 2.4rem;
-    background: transparent;
-    border: 2px solid ${props => props.theme.colors.text};
+    background: rgba(0, 0, 0, 0.02);
+    border: 2px solid ${props => props.theme.colors.border};
     border-radius: 50%;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+        background: ${props => props.theme.colors.background};
+    }
 `;
 
 export const SearchImg = styled.img`

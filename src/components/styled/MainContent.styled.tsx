@@ -12,11 +12,16 @@ export const MainContentWrap = styled.div`
     }
 `;
 
+export const SpaceHolder = styled.div`
+    font-size: 1.4rem;
+    margin: 1rem;
+`;
+
 export const WeatherIcon = styled.div`
     align-self: center;
     margin-right: -0.7rem;
-    margin-bottom: -0.3rem;
-    filter: brightness(2);
+    filter: brightness(1.7);
+    filter: saturate(1.2);
 `;
 
 export const MainTemp = styled.p`
@@ -27,11 +32,13 @@ export const Location = styled.div`
     display: flex;
     flex-direction: column;
     font-size: 3rem;
+    margin-right: 0.7rem;
     & > p {
         font-size: 1.6rem;
     }
     @media ${({theme}) => theme.mobile} {
         flex-direction: row;
+        margin-right: 0.5rem;
     }
 `;
 
